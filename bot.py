@@ -3,7 +3,7 @@ import discord
 from datetime import datetime
 
 
-class MyClient(discord.Client):
+class Bot10A(discord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.loop.create_task(self.statusTask())
@@ -67,5 +67,5 @@ def getRunToken():
     return out
 
 tk = getRunToken()
-client = MyClient()
+client = Bot10A()
 client.run(tk)
