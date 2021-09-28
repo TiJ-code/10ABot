@@ -18,7 +18,7 @@ class MyClient(discord.Client):
                 activity=discord.Activity(name=str(updatecountdown()), type=5),
                 status=discord.Status.do_not_disturb
             )
-            await asyncio.sleep(10)
+            await asyncio.sleep(15)
 
 def updatecountdown():
     file = open("exams.txt", "r")
