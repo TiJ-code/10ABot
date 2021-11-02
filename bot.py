@@ -49,8 +49,10 @@ def updatecountdown():
             target = datetime(day=td, month=tm, year=ty)
 
             over = target - now
-
-            if int(str(over).split(' ')[0]) >= 10:
+            
+            if int(str(over).split(' ')[0]) < 0:
+                removeExam()
+            if int(str(over).split(' ')[0]) >= 2:
                 rest = "".join(str(over).split(' ')[0] + " Tagen, " + str(over).split(' ')[2]) + " (" + title + ")"
             else:
                 rest = "".join(str(over).split(' ')[0] + " Tage, " + str(over).split(' ')[2]) + " (" + title + ")"
@@ -65,6 +67,14 @@ def getRunToken():
     file.close()
     print(out)
     return out
+
+def removeExam():
+    file = open("exams.txt", "r+")
+    lines = file.readlines()
+    lines[1] = ""
+    lines[2] = ""
+    file.write(lines)
+    file.close()
 
 tk = getRunToken()
 client = Bot10A()
