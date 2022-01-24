@@ -5,13 +5,13 @@ import asyncio
 class Edgar(discord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.default_channel = client.get_channel(798147945396568098)
+        self.default_channel = self.get_channel(798147945396568098)
 
     async def on_ready(self):
         print(f'Logging in as {self.user}')
 
     async def on_message(self, msg):
-        if msg.author.id == client.user.id:
+        if msg.author.id == self.user.id:
             return
 
         curseWords = ['discode', 'discord.ccom']
