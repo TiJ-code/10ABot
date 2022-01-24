@@ -5,7 +5,7 @@ import asyncio
 class Edgar(discord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.default_channel = self.get_channel(798147945396568098)
+        self.default_channel = self.get_channel(813740712830042155)
 
     async def on_ready(self):
         print(f'Logging in as {self.user}')
@@ -18,7 +18,7 @@ class Edgar(discord.Client):
 
         if any(word in msg.content for word in curseWords):
             #await msg.delete()
-            await msg.channel.send(f"LOL! {msg.author.mention} hats erwischt! POGGERS")
+            await self.default_channel.send(f"LOL! {msg.author.mention} hats erwischt! POGGERS")
             await send_dm(530758332882092032, "Es hat wieder wen erwischt")
 
 
