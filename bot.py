@@ -22,8 +22,6 @@ class Edgar(discord.Client):
 
         if any(word in msg.content for word in curseWords):
             await msg.delete()
-            await default_channel.send(f"LOL! {msg.author.mention} hats erwischt! POGGERS")
-            await send_dm(530758332882092032, "Es hat wieder wen erwischt")
 
 
 async def send_dm(member: discord.Member, *, content):
